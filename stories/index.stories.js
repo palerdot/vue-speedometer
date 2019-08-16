@@ -34,7 +34,7 @@ storiesOf(`vue-speedometer`, module)
   )
   .add("Configuring values", () => ({
     components: { VueSpeedometer },
-    template: `<vue-speedometer value="333" />`,
+    template: `<vue-speedometer :value="333" />`,
   }))
   .add("Custom segment colors", () => ({
     components: { VueSpeedometer },
