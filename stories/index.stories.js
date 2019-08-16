@@ -95,19 +95,19 @@ storiesOf(`vue-speedometer`, module)
         }
       },
       template: `
-    <div :style="styles">
-      <vue-speedometer 
-        :fluidWidth="true"
-        :minValue="100"
-        :maxValue="500"
-        :value="473"
-        needleColor="steelblue"
-      />
-      <div>
-      Fluid width takes the width of the parent div (<strong>500px</strong> in this case)
-      </div>
-    </div>
-    `,
+        <div :style="styles">
+          <vue-speedometer 
+            :fluidWidth="true"
+            :minValue="100"
+            :maxValue="500"
+            :value="473"
+            needleColor="steelblue"
+          />
+          <div>
+          Fluid width takes the width of the parent div (<strong>500px</strong> in this case)
+          </div>
+        </div>
+      `,
     }),
     {
       info: "Fluid width takes the width of the parent div",
