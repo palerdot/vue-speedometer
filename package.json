@@ -1,0 +1,62 @@
+{
+  "name": "vue-speedometer",
+  "version": "1.0.0",
+  "description": "Vue component for showing speedomenter like gauge with d3",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/palerdot/vue-d3-speedometer.git"
+  },
+  "keywords": [
+    "vue",
+    "gauge",
+    "speedometer",
+    "d3"
+  ],
+  "author": "palerdot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/palerdot/vue-speedometer/issues"
+  },
+  "homepage": "https://github.com/palerdot/vue-speedometer#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.3.4",
+    "@babel/runtime-corejs2": "^7.3.4",
+    "d3": "^5.9.2",
+    "lodash": "^4.17.14",
+    "memoize-one": "^5.0.5"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.4",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-info": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/theming": "^5.1.11",
+    "@storybook/vue": "^5.1.11",
+    "@vue/server-test-utils": "^1.0.0-beta.29",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "jest": "^24.8.0",
+    "storybook-addon-vue-info": "^1.2.2",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
