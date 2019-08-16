@@ -262,6 +262,18 @@ npm test
 
 ---
 
+### FAQ
+
+- Please refer this [comment](https://github.com/vuejs/vue-cli/issues/1875#issuecomment-408739414) if you run into `vue cli you are using the runtime only build of vue where the template compiler is not available` message when running from your local setup bootstrapped with `vue-cli`. Basically create a `vue.config.js`
+```javascript
+// vue.config.js
+module.exports = {
+  runtimeCompiler: true
+}
+```
+
+---
+
 #### Feature Updates:
 - v1.0.0.beta Initial release
 

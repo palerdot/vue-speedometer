@@ -2,7 +2,10 @@ module.exports = function(api) {
   api.cache(true)
 
   const presets = ["@babel/preset-env"]
-  const plugins = ["@babel/plugin-proposal-class-properties"]
+  const plugins = [
+    "@babel/plugin-proposal-class-properties",
+    "transform-vue-template",
+  ]
 
   return {
     presets,
@@ -17,6 +20,7 @@ module.exports = function(api) {
       plugins: [
         ["transform-remove-console"],
         ["@babel/plugin-transform-modules-commonjs"],
+        ["transform-vue-template"],
         [
           "@babel/plugin-transform-runtime",
           {
