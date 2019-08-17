@@ -65,7 +65,6 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-source-map-support": "2.0.1",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "babel-plugin-transform-vue-template": "^0.4.2",
     "babel-preset-minify": "^0.5.0",
     "babel-preset-vue": "^2.0.2",
     "eslint": "^5.15.2",
