@@ -275,7 +275,7 @@ module.exports = {
 ---
 
 #### Feature Updates:
-- `v1.0.0.beta` Initial release
+- `v1.0.0.beta` Initial release. ref - https://codesandbox.io/s/vue-template-5yuw8
 
 #### Changelog:
 
