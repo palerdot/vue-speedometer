@@ -78,6 +78,16 @@ storiesOf(`vue-speedometer`, module)
           :currentValueText='"Current Value: \${value}"'
           :value="777"
         />
+        <vue-speedometer 
+          :maxSegmentLabels="1"
+          :customSegmentStops="[-120, -100, 0]"
+          :segmentColors='["tomato", "gold"]'
+          needleColor="#5959ac"
+          :currentValueText='"Current Value: \${value}"'
+          :value="-100"
+          :minValue="-120"
+          :maxValue="0"
+        />
       </div>
     `,
   }))
