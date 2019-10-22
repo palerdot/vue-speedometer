@@ -270,13 +270,15 @@ storiesOf(`vue-speedometer`, module)
   `,
     }
   )
-  .add("Configure needle length", () => ({
+  .add("Configure needle length and font sizes", () => ({
     components: { VueSpeedometer },
     template: `
       <div>
         <vue-speedometer
           :value="333"
           :needleHeightRatio="0.5"
+          labelFontSize="15px"
+          valueTextFontSize="23px"
         />
       </div>
   `,

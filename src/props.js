@@ -31,6 +31,10 @@ const prop_types = {
     type: Number,
     required: true,
   },
+  dimensionUnit: {
+    type: String,
+    required: true,
+  },
   fluidWidth: {
     type: Boolean,
     required: true,
@@ -104,6 +108,16 @@ const prop_types = {
   },
   // placeholder style for current value
   currentValuePlaceholderStyle: {
+    type: String,
+    required: true,
+  },
+
+  // font sizes
+  labelFontSize: {
+    type: String,
+    required: true,
+  },
+  valueTextFontSize: {
     type: String,
     required: true,
   },

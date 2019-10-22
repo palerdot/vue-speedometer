@@ -1,7 +1,10 @@
 # Change Log
 
+## 1.0.3
+- core sync `[v0.7.2, v0.7.3]`
+
 ## 1.0.2
-- core sync [v0.7.1]
+- core sync `[v0.7.1]`
 
 ## 1.0.1 beta
 - minor `README` fixes
