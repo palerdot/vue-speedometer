@@ -350,3 +350,23 @@ storiesOf(`vue-speedometer`, module)
         </div>
     `,
   }))
+  .add(
+    "Customize font sizes and spacing",
+    () => ({
+      components: { VueSpeedometer },
+      template: `
+        <div>
+          <vue-speedometer
+            :value="333"
+            :needleHeightRatio="0.5"
+            labelFontSize="31px"
+            valueTextFontSize="37px"
+            :paddingHorizontal="17"
+            :paddingVertical="17"
+            currentValueText="Value: \${value}"
+          />
+        </div>
+      `,
+    }),
+    { source: true, inline: true, header: false }
+  )
