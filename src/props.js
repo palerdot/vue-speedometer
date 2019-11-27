@@ -31,6 +31,14 @@ const prop_types = {
     type: Number,
     required: true,
   },
+  paddingHorizontal: {
+    type: Number,
+    required: true,
+  },
+  paddingVertical: {
+    type: Number,
+    required: true,
+  },
   dimensionUnit: {
     type: String,
     required: true,
