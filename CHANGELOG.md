@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.1.0
+- [bugfix] Fix `forceRender` prop not updating from `true => false`. Fixes - https://github.com/palerdot/vue-speedometer/issues/4
+
 ## 1.0.4
 - [CORE][0.8.0]
 
