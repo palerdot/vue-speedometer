@@ -5,6 +5,12 @@ module.exports = function(api) {
   const plugins = [
     "@babel/plugin-proposal-class-properties",
     // "transform-vue-template",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        regenerator: true,
+      },
+    ],
   ]
 
   return {

@@ -11,11 +11,20 @@ import {
 } from "../core/util"
 
 // helper function to mount with default options to attach to dom
-const _mount = (options) =>
+export const _mount = (options) =>
   mount(VueSpeedometer, {
     attachToDocument: true,
     ...options,
   })
+
+const _shallowMount = (options) =>
+  shallowMount(VueSpeedometer, {
+    attachToDocument: true,
+    ...options,
+  })
+
+// NOTE: 'Vue' CAVEAT
+// for props to change, set default props with `propsData` (instead of relying on internal defaults)
 
 // we are using a debounced update Reading function
 // debounce our assertion too
@@ -25,8 +34,20 @@ const debouncedCheck = (fn) =>
     trailing: true,
   })
 
-const nextTickUpdateCheck = (wrapper, fn) => {
-  return wrapper.vm.$nextTick().then(debouncedCheck(fn))
+// const nextTickUpdateCheck = (wrapper, fn) => {
+//   return wrapper.vm.$nextTick().then(debouncedCheck(fn))
+// }
+
+const nextTickUpdateCheck = async (wrapper, fn) => {
+  await new Promise((resolve) => setTimeout(resolve, 0))
+
+  await wrapper.vm.$nextTick(fn)
+}
+
+export const debouncedWait = async (wrapper, fn) => {
+  await new Promise((resolve) => setTimeout(resolve, 0))
+
+  await wrapper.vm.$nextTick(fn)
 }
 
 describe("<vue-speedometer />", () => {
@@ -80,96 +101,6 @@ describe("<vue-speedometer />", () => {
     expect(wrapper.find("text.current-value").element.style.fill).toBe(
       "steelblue"
     )
-  })
-
-  // should smoothly animate only the current value; not other breaking changes
-  test("smooth update of values", () => {
-    const value = 333
-    const updatedValue = 470
-    const full_dom_wrapper = _mount({
-      propsData: {
-        value,
-      },
-    })
-    expect(full_dom_wrapper.find("text.current-value").text()).toBe(
-      value.toString()
-    )
-
-    expect(
-      full_dom_wrapper
-        .findAll("path.speedo-segment")
-        .at(0)
-        .attributes("fill")
-    ).toBe(`rgb(255, 71, 26)`) // rgb value of our default 'startColor'
-
-    // set updated props
-    full_dom_wrapper.setProps({
-      value: updatedValue,
-      startColor: "red",
-    })
-
-    // confirm our start color is intact
-    expect(
-      full_dom_wrapper
-        .findAll("path.speedo-segment")
-        .at(0)
-        .attributes("fill")
-    ).toBe(`rgb(255, 71, 26)`) // rgb value of our default 'startColor'
-
-    return full_dom_wrapper.vm.$nextTick().then(
-      debouncedCheck(() => {
-        expect(full_dom_wrapper.find("text.current-value").text()).toBe(
-          updatedValue.toString()
-        )
-      })
-    )
-  })
-
-  // check the format of the values
-  test("should display the format of the values correctly", () => {
-    // checking the default value
-    const full_dom_wrapper = _mount()
-    expect(full_dom_wrapper.find("text.current-value").text()).toBe("0")
-    // setting label format to "d" and verifying the resulting value
-    let passed_value = 477.7,
-      transformed_value = "478"
-    // change the props
-    full_dom_wrapper.setProps({
-      value: passed_value,
-      valueFormat: "d",
-    })
-
-    // test if the formatting reflects the expected value
-    return nextTickUpdateCheck(full_dom_wrapper, () => {
-      expect(full_dom_wrapper.find("text.current-value").text()).toBe(
-        transformed_value
-      )
-    })
-  })
-
-  // check the custom value text
-  test("should display custom current text value", () => {
-    // checking the default value
-    const full_dom_wrapper = _mount({
-      propsData: {
-        value: 333,
-        currentValueText: "Porumai: ${value}",
-      },
-    })
-    expect(full_dom_wrapper.find("text.current-value").text()).toBe(
-      "Porumai: 333"
-    )
-    // change props to another text
-    full_dom_wrapper.setProps({
-      value: 555,
-      currentValueText: "Current Value: ${value}",
-    })
-    // test current value text reflects our new props
-    return nextTickUpdateCheck(full_dom_wrapper, () => {
-      expect(full_dom_wrapper.find("text.current-value").text()).toBe(
-        "Current Value: 555"
-      )
-    })
   })
 
   // it should not break on invalid needle transition
@@ -355,39 +286,5 @@ describe("<vue-speedometer /> rendering, update and forceRender", () => {
     })
 
     expect(renderGauge).toHaveBeenCalledTimes(1)
-  })
-
-  const wrapper = _mount()
-
-  // if force render is present, it should re render the whole component
-  test('should rerender the whole component when "forceRender: true" ', () => {
-    expect(wrapper.findAll("path.speedo-segment").length).toBe(5)
-    // change the props and give 'rerender' true
-    wrapper.setProps({
-      segments: 10,
-      // set force render to true so that we should get 10 segments
-      forceRender: true,
-    })
-
-    return wrapper.vm.$nextTick().then(
-      debouncedCheck(() => {
-        expect(wrapper.findAll("path.speedo-segment").length).toBe(10)
-      })
-    )
-  })
-  test('should not rerender when "forceRender: false" ', () => {
-    // now change the forceRender option to false
-    wrapper.setProps({
-      segments: 15,
-      // set force render to true so that we should get 10 segments
-      forceRender: false,
-    })
-
-    // the segments should remain in 10
-    return nextTickUpdateCheck(wrapper, () => {
-      expect(full_dom_wrapper.render().find("path.speedo-segment").length).toBe(
-        10
-      )
-    })
   })
 })

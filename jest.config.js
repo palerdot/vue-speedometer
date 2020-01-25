@@ -144,7 +144,7 @@ module.exports = {
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: [
     "/node_modules/",
-    "lib/d3-speedometer/src/__tests__/index.js"
+    "lib/d3-speedometer/src/__tests__/index.js",
   ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
@@ -182,4 +182,4 @@ module.exports = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}

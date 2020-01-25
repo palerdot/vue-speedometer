@@ -36,7 +36,7 @@ export default {
   },
 
   watch: {
-    forceRender: function(newValue, oldValue) {
+    forceRender: function(newValue) {
       // force render should just take the new value
       this.force_render = newValue
     },
