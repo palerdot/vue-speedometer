@@ -251,7 +251,7 @@ export default {
 - [x] Test coverage (with [vue-test-utils](https://vue-test-utils.vuejs.org/))
 - [x] Convert entire code base to ES6
 - [x] Split core from lifecycles
-- [ ] Typescript support?
+- [x] Typescript support
 
 ---
 
@@ -280,6 +280,7 @@ module.exports = {
 ---
 
 #### Feature Updates:
+- `v1.2.0` - `Typescript` support
 - `v1.0.0.beta` Initial release. ref - https://codesandbox.io/s/vue-template-5yuw8
 
 #### Changelog:

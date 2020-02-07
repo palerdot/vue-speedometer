@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.2.0
+- `Typescript` support. [CORE][0.9.0]
+
 ## 1.1.0
 - [bugfix] Fix `forceRender` prop not updating from `true => false`. Fixes - https://github.com/palerdot/vue-speedometer/issues/4
 
