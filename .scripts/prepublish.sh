@@ -15,12 +15,13 @@ echo ""
 rm -rf ./dist
 # .babelrc has all the plugins and presets used
 
+npm run try-build
+
 echo ""
 echo "copying typescript definition file (index.d.ts)"
 cp ./src/index.d.ts ./dist/
 echo "copied !!! typescript definition file (index.d.ts)"
 
-npm run try-build
 echo ""
 echo "=> Transpiling completed."
 
