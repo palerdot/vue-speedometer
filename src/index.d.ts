@@ -1,6 +1,5 @@
-import Vue, { VNode } from "vue"
-
 declare module "vue-speedometer" {
+  import Vue from "vue"
   interface ComponentOptions<V extends Vue> {
     value?: number
 
@@ -42,4 +41,8 @@ declare module "vue-speedometer" {
     paddingHorizontal?: number
     paddingVertical?: number
   }
+
+  class VueSpeedometer<ComponentOptions> extends Vue {}
+
+  export default VueSpeedometer
 }
