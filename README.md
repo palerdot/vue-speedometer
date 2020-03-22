@@ -8,7 +8,7 @@
 
 [![NPM](https://nodei.co/npm/vue-speedometer.png)](https://npmjs.org/package/vue-speedometer)
 
-![vue-speedometer](https://github.com/palerdot/vue-speedometer/blob/master/speedo.gif)
+![vue-speedometer](https://raw.githubusercontent.com/palerdot/vue-speedometer/master/speedo.gif)
 
 ## Usage:
 
