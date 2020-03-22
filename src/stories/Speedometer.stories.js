@@ -16,8 +16,6 @@ export const CustomSegmentLabels = () => `
       :width="500"
       :needleHeightRatio="0.7"
       :value="777"
-      :customSegmentStops='[0, 250, 750, 1000]'
-      :segmentColors='["#9399ff", "#14ffec", "#00bbf0"]'
       currentValueText="Happiness Level"
       :customSegmentLabels='[
         {
