@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.3.1
+- link banner gif from github master tree
+
 ## 1.3.0
 - [`CORE`][0.10.0]
 
