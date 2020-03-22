@@ -30,6 +30,8 @@ export default {
 
 `vue-speedometer` is the name of the component to be used inside Vue templates
 
+You can view [Live Examples here](https://palerdot.in/vue-speedometer/)
+
 ## About
 
 `vue-speedometer` shares its core with [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer). For more info and context, please visit [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer) 
