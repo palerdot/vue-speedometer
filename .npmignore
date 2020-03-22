@@ -20,4 +20,6 @@ stories
 
 .travis.yml
 
+yarn.lock
+
 
