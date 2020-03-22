@@ -1,6 +1,19 @@
 declare module "vue-speedometer" {
   import Vue from "vue"
-  interface ComponentOptions<V extends Vue> {
+
+  enum CustomSegmentLabelPosition {
+    Outside = "OUTSIDE",
+    Inside = "INSIDE",
+  }
+
+  type CustomSegmentLabel = {
+    text?: string
+    position?: CustomSegmentLabelPosition
+    fontSize?: string
+    color?: string
+  }
+
+  interface Props<V extends Vue> {
     value?: number
 
     minValue?: number
@@ -35,6 +48,8 @@ declare module "vue-speedometer" {
 
     customSegmentStops?: number[]
 
+    customSegmentLabels?: CustomSegmentLabel[]
+
     labelFontSize?: string
     valueTextFontSize?: string
 
@@ -42,7 +57,10 @@ declare module "vue-speedometer" {
     paddingVertical?: number
   }
 
-  class VueSpeedometer<ComponentOptions> extends Vue {}
+  class VueSpeedometer<Props> extends Vue {}
+
+  // named exports of all the types
+  export { Props, CustomSegmentLabel, CustomSegmentLabelPosition }
 
   export default VueSpeedometer
 }
