@@ -8,7 +8,7 @@
 
 [![NPM](https://nodei.co/npm/vue-speedometer.png)](https://npmjs.org/package/vue-speedometer)
 
-![vue-speedometer](speedo.gif)
+![vue-speedometer](https://github.com/palerdot/vue-speedometer/blob/master/speedo.gif)
 
 ## Usage:
 
@@ -89,6 +89,69 @@ export default {
   components: { VueSpeedometer },
   template: `<vue-speedometer value="333" />`,
 }
+```
+
+#### Custom Segment Labels - [Live Example](https://palerdot.in/vue-speedometer/?path=/story/vue-speedometer--custom-segment-labels)
+
+```javascript
+// 'customSegmentLabels' prop takes an array of 'CustomSegmentLabel' Object
+/*
+type CustomSegmentLabel = {
+  text?: string
+  position?: OUTSIDE/INSIDE
+  fontSize?: string
+  color?: string
+}
+*/
+
+export default {
+  components: { VueSpeedometer },
+  template: `
+    <div>
+      <vue-speedometer 
+      :width="500"
+      :needleHeightRatio="0.7"
+      :value="777"
+      currentValueText="Happiness Level"
+      :customSegmentLabels='[
+        {
+          text: "Very Bad",
+          position: "INSIDE",
+          color: "#555",
+        },
+        {
+          text: "Bad",
+          position: "INSIDE",
+          color: "#555",
+        },
+        {
+          text: "Ok",
+          position: "INSIDE",
+          color: "#555",
+          fontSize: "19px",
+        },
+        {
+          text: "Good",
+          position: "INSIDE",
+          color: "#555",
+        },
+        {
+          text: "Very Good",
+          position: "INSIDE",
+          color: "#555",
+        },
+      ]'
+      :ringWidth="47"
+      :needleTransitionDuration="3333"
+      needleTransition="easeElastic"
+      needleColor="#a7ff83"
+      textColor="#d8dee9"
+    />
+    </div>
+  `,
+}
+  
+/>
 ```
 
 #### Custom Segment Colors - [Live Example](https://palerdot.in/vue-speedometer/?path=/story/vue-speedometer--custom-segment-colors)
@@ -283,7 +346,7 @@ module.exports = {
 ---
 
 #### Feature Updates:
-- `v1.3.0` - `customSegmentLabels` prop to show custom segment labels. [Live Example](https://palerdot.in/vue-speedometer/?path=/story/vue-speedometer--custom-segment-labels)
+- `v1.3.0` - `customSegmentLabels` prop to show custom segment labels. [Live Example](https://codesandbox.io/s/zen-platform-7e8eq)
 - `v1.2.0` - `Typescript` support
 - `v1.0.0.beta` Initial release. ref - https://codesandbox.io/s/vue-template-5yuw8
 
