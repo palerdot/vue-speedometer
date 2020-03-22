@@ -8,7 +8,7 @@
 
 [![NPM](https://nodei.co/npm/vue-speedometer.png)](https://npmjs.org/package/vue-speedometer)
 
-![vue-speedometer](speedo.gif)
+![vue-speedometer](https://raw.githubusercontent.com/palerdot/vue-speedometer/master/speedo.gif)
 
 ## Usage:
 
@@ -29,6 +29,8 @@ export default {
 ```
 
 `vue-speedometer` is the name of the component to be used inside Vue templates
+
+You can view [Live Examples here](https://palerdot.in/vue-speedometer/)
 
 ## About
 
@@ -61,6 +63,7 @@ export default {
 | currentValueText | String | ${value} | Should be provided a string which should have **${value}** placeholder which will be replaced with current value. By default, current value is shown (formatted with `valueFormat`). For example, if current Value is 333 if you would like to show `Current Value: 333`, you should provide a string **`Current Value: ${value}`**. See [Live Example](https://palerdot.in/vue-speedometer/?selectedKind=vue-speedometer&selectedStory=Custom%20Current%20Value%20Text&full=0&down=1&left=1&panelRight=0) |
 | currentValuePlaceholderStyle | String | ${value} | Should be provided a placeholder string which will be replaced with current value in `currentValueTextProp`. For example: you can use ruby like interpolation by giving following props - `<vue-speedometer    currentValueText="Current Value: #{value}" currentValuePlaceholderStyle={"#{value}"} />`. This is also helpful if you face `no-template-curly-in-string` eslint warnings and would like to use different placeholder for current value |
 | customSegmentStops | Array         | []     | Array of values **starting** at `min` value, and **ending** at `max` value. This configuration is useful if you would like to split the segments at custom points or have unequal segments at preferred values. If the values does not begin and end with `min` and `max` value respectively, an error will be thrown. This configuration will override `segments` prop, since total number of segments will be `length - 1` of `customSegmentProps`. For example, `[0, 50, 75, 100]` value will have three segments - `0-50`, `50-75`, `75-100`. See [Live Example](https://palerdot.in/vue-speedometer/?path=/story/vue-speedometer--custom-segment-stops) |
+| customSegmentLabels | Array`<CustomSegmentLabel>` | [] | Takes an array of `CustomSegmentLabel` objects. Each object has following keys for custom rendering of labels - `text`, `fontSize`, `color`, `position: OUTSIDE/INSIDE`. For `type(script)` definitions, please refer [here](./src/index.d.ts). |
 | labelFontSize | String         | 14px     | Font size for segment labels/legends |
 | valueTextFontSize | String         | 16px     | Font size for current value text |
 | paddingHorizontal |	Number |	0  |	Provides right/left space for the label text. Takes a number (without explicit unit, unit will be taken from dimensionUnit config which defaults to px). Helpful when using a bigger font size for label texts. |
@@ -86,6 +89,69 @@ export default {
   components: { VueSpeedometer },
   template: `<vue-speedometer value="333" />`,
 }
+```
+
+#### Custom Segment Labels - [Live Example](https://palerdot.in/vue-speedometer/?path=/story/vue-speedometer--custom-segment-labels)
+
+```javascript
+// 'customSegmentLabels' prop takes an array of 'CustomSegmentLabel' Object
+/*
+type CustomSegmentLabel = {
+  text?: string
+  position?: OUTSIDE/INSIDE
+  fontSize?: string
+  color?: string
+}
+*/
+
+export default {
+  components: { VueSpeedometer },
+  template: `
+    <div>
+      <vue-speedometer 
+      :width="500"
+      :needleHeightRatio="0.7"
+      :value="777"
+      currentValueText="Happiness Level"
+      :customSegmentLabels='[
+        {
+          text: "Very Bad",
+          position: "INSIDE",
+          color: "#555",
+        },
+        {
+          text: "Bad",
+          position: "INSIDE",
+          color: "#555",
+        },
+        {
+          text: "Ok",
+          position: "INSIDE",
+          color: "#555",
+          fontSize: "19px",
+        },
+        {
+          text: "Good",
+          position: "INSIDE",
+          color: "#555",
+        },
+        {
+          text: "Very Good",
+          position: "INSIDE",
+          color: "#555",
+        },
+      ]'
+      :ringWidth="47"
+      :needleTransitionDuration="3333"
+      needleTransition="easeElastic"
+      needleColor="#a7ff83"
+      textColor="#d8dee9"
+    />
+    </div>
+  `,
+}
+  
+/>
 ```
 
 #### Custom Segment Colors - [Live Example](https://palerdot.in/vue-speedometer/?path=/story/vue-speedometer--custom-segment-colors)
@@ -280,6 +346,7 @@ module.exports = {
 ---
 
 #### Feature Updates:
+- `v1.3.0` - `customSegmentLabels` prop to show custom segment labels. [Live Example](https://codesandbox.io/s/zen-platform-7e8eq)
 - `v1.2.0` - `Typescript` support
 - `v1.0.0.beta` Initial release. ref - https://codesandbox.io/s/vue-template-5yuw8
 
