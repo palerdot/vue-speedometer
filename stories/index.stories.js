@@ -1,13 +1,24 @@
 import { addParameters, storiesOf, addDecorator } from "@storybook/vue"
 // import { create } from "@storybook/theming"
-// import { withInfo } from "storybook-addon-vue-info"
+import { withInfo } from "storybook-addon-vue-info"
 
 // DEVELOPMENT
 import VueSpeedometer from "../src/"
 // PRODUCTION build switch for testing final build
 // import VueSpeeedometer from "../dist/index.js"
 
+addDecorator(
+  withInfo({
+    inline: true,
+    maxPropObjectKeys: 100,
+    maxPropArrayLength: 1000,
+  })
+)
+
+// export const PorumaiDefaultWithNoConfig = () => `<vue-speedometer />`
+
 storiesOf(`vue-speedometer`, module)
+  .addParameters({ component: VueSpeedometer })
   .add(
     "Default with no config",
     () => ({

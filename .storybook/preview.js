@@ -1,6 +1,18 @@
-import { addParameters } from "@storybook/vue"
-import { themes } from "@storybook/theming"
+import { addParameters, configure } from "@storybook/vue"
 import { create } from "@storybook/theming/create"
+
+// ref: https://storybook.js.org/docs/guides/guide-vue/
+import Vue from "vue"
+
+// DEVELOPMENT: 'src/index.js'
+import VueSpeedometer from "../src/index"
+// PRODUCTION build testing
+// import VueSpeedometer from "../dist/index"
+
+// Register global components.
+Vue.component("vue-speedometer", VueSpeedometer)
+
+configure(require.context("../src", true, /\.stories\.js$/), module)
 
 const speedoTheme = create({
   base: "dark",
@@ -25,6 +37,6 @@ addParameters({
     theme: speedoTheme,
   },
   docs: {
-    previewSource: "open",
+    inlineStories: true,
   },
 })

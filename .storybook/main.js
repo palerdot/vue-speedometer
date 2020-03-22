@@ -1,7 +1,9 @@
+const path = require("path")
+
 module.exports = {
   stories: [
-    "../stories/*.stories.js",
-    // "../src/stories/index.js"
+    // "../stories/*.stories.js",
+    "../src/stories/*.stories.js",
   ],
   addons: [
     // "@storybook/addon-knobs/register",
@@ -9,9 +11,11 @@ module.exports = {
     {
       name: "@storybook/addon-docs",
       options: {
-        configureJSX: true,
-        babelOptions: {},
-        sourceLoaderOptions: null,
+        vueDocgenOptions: {
+          alias: {
+            "@": path.resolve(__dirname, "../"),
+          },
+        },
       },
     },
   ],
