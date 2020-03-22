@@ -1,7 +1,7 @@
 lib
 src
 stories
-.stories
+.storybook
 
 .scripts
 
@@ -19,7 +19,5 @@ stories
 .prettierrc
 
 .travis.yml
-
-*.md
 
 
