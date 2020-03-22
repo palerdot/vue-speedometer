@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.3.0
+- [`CORE`][0.10.0]
+
 ## 1.2.1
 - *Fix Typescript declaration*. Use proper Vue type declaration. Fixes typescript support problem for Vue/Typescript.
 
