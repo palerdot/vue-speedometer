@@ -62,6 +62,11 @@ const prop_types = {
     type: Array,
   },
 
+  // custom segment labels
+  customSegmentLabels: {
+    type: Array,
+  },
+
   // color strings
   needleColor: {
     type: String,
@@ -135,6 +140,9 @@ const prop_types = {
 const props = mapValues(prop_types, (value, key) => {
   const CUSTOM_DEFAULTS = {
     customSegmentStops: function() {
+      return []
+    },
+    customSegmentLabels: function() {
       return []
     },
     segmentColors: function() {
