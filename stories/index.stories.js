@@ -1,27 +1,11 @@
-/* eslint-disable react/react-in-jsx-scope */
-
 import { addParameters, storiesOf, addDecorator } from "@storybook/vue"
-import { create } from "@storybook/theming"
-import { withInfo } from "storybook-addon-vue-info"
+// import { create } from "@storybook/theming"
+// import { withInfo } from "storybook-addon-vue-info"
 
+// DEVELOPMENT
 import VueSpeedometer from "../src/"
-
-addDecorator(
-  withInfo({
-    inline: true,
-    maxPropObjectKeys: 100,
-    maxPropArrayLength: 1000,
-  })
-)
-
-addParameters({
-  options: {
-    showPanel: true,
-    theme: create({
-      brandTitle: "<img>&lt;vue-speedometer /&gt; </img>",
-    }),
-  },
-})
+// PRODUCTION build switch for testing final build
+// import VueSpeeedometer from "../dist/index.js"
 
 storiesOf(`vue-speedometer`, module)
   .add(
