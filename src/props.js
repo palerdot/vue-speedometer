@@ -1,5 +1,8 @@
 // export prop types for 'Vue' and use the core 'default' values to match with the format Vue expects
-import { mapValues, keys as _keys, each as _each } from "lodash"
+import mapValues from "lodash-es/mapValues"
+import _keys from "lodash-es/keys"
+import _each from "lodash-es/each"
+
 import { DEFAULT_PROPS } from "./core/config"
 
 const prop_types = {
@@ -139,13 +142,13 @@ const prop_types = {
 // update the props with default values
 const props = mapValues(prop_types, (value, key) => {
   const CUSTOM_DEFAULTS = {
-    customSegmentStops: function() {
+    customSegmentStops: function () {
       return []
     },
-    customSegmentLabels: function() {
+    customSegmentLabels: function () {
       return []
     },
-    segmentColors: function() {
+    segmentColors: function () {
       return []
     },
   }

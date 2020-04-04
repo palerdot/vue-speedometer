@@ -39,7 +39,7 @@
     "@babel/runtime": "^7.9.2",
     "@babel/runtime-corejs2": "^7.9.2",
     "d3": "^5.9.2",
-    "lodash": "^4.17.14",
+    "lodash-es": "^4.17.15",
     "memoize-one": "^5.0.5"
   },
   "peerDependencies": {

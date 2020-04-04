@@ -1,6 +1,6 @@
 import { shallowMount, mount } from "@vue/test-utils"
 import VueSpeedometer from "../index"
-import { debounce } from "lodash"
+import debounce from "lodash-es/debounce"
 
 // import validators
 import {
@@ -223,7 +223,7 @@ describe("<vue-speedometer /> rendering, update and forceRender", () => {
     const renderGauge = jest.fn(() => {
       // console.log("porumai! renderGauge")
     })
-    const updateReadings = jest.fn(function({ force_render }) {
+    const updateReadings = jest.fn(function ({ force_render }) {
       if (force_render) {
         renderGauge()
       } else {
@@ -233,10 +233,10 @@ describe("<vue-speedometer /> rendering, update and forceRender", () => {
     const _updateReadings = jest.fn(() => {
       // console.log("porumai! __update READINGs")
     })
-    const _initWatchers = jest.fn(function() {
+    const _initWatchers = jest.fn(function () {
       // console.log("porumai! initing watchers ")
     })
-    const watchUpdater = jest.fn(function(options) {
+    const watchUpdater = jest.fn(function (options) {
       // console.log("porumai watch updater ", options)
       updateReadings(options)
     })
