@@ -273,7 +273,7 @@ export default {
 }
 ```
 
-#### Needle Height Configuration Example - [Live Example](https://palerdot.in/vue-speedometer/?path=/story/vue-speedometer--configure-needle-length)
+#### Needle Height Configuration Example - [Live Example](https://palerdot.in/vue-speedometer/?path=/story/vue-speedometer--configure-needle-length-and-font-sizes)
 
 ```javascript
 export default {
@@ -292,7 +292,7 @@ export default {
 You can give a value between `0` and `1` to control the needle height.
 
 
-#### Gradient Like Effect - [Live Example](https://palerdot.in/vue-speedometer/?path=/story/vue-speedometer--gradient-effect-with-large-number-of-segments-and-maxsegmentlabels-config)
+#### Gradient Like Effect - [Live Example](https://palerdot.in/vue-speedometer/?path=/story/vue-speedometer--gradient-effect-with-large-number-of-segments-and-max-segment-labels-config)
 
 ```javascript
 export default {
