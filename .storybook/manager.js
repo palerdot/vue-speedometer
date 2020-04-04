@@ -1,14 +1,9 @@
 import { addons } from "@storybook/addons"
-import { themes } from "@storybook/theming"
 import { create } from "@storybook/theming/create"
+import theme from "../src/core/theme"
 
 const speedoTheme = create({
-  base: "dark",
-
-  appBg: "#413c69",
-  appContentBg: "#2a2744",
-  barBg: "#373359",
-  // appContentBg: "#413c69",
+  ...theme,
 
   brandTitle: "vue-speedometer",
   brandUrl: "https://github.com/palerdot/vue-speedometer",

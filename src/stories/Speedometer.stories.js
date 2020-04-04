@@ -1,4 +1,4 @@
-// IMPORTANT: checkout `.storybook/preview.js` to switch between prod and dist builds
+// IMPORTANT: checkout `.storybook/preview.js` to switch between DEV and DIST/PROD builds
 
 export default { title: "vue-speedometer" }
 
@@ -216,7 +216,7 @@ export const ForceRenderTheComponent = () => ({
     }
   },
   methods: {
-    onClick: function() {
+    onClick: function () {
       this.toggleStatus = !this.toggleStatus
     },
   },
