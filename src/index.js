@@ -1,4 +1,6 @@
-import { debounce as _debounce, each as _each } from "lodash"
+import _debounce from "lodash-es/debounce"
+import _each from "lodash-es/each"
+
 import { select as d3Select } from "d3"
 import { getConfig, updateConfig } from "./core/config"
 import { render, update } from "./core/render"
@@ -12,23 +14,23 @@ export default {
     <div></div>
   `,
 
-  beforeCreate: function() {
+  beforeCreate: function () {
     this.d3_refs = {
       pointer: false,
       current_value_text: false,
     }
   },
 
-  created: function() {
+  created: function () {
     this._initWatchers()
   },
 
-  mounted: function() {
+  mounted: function () {
     // render the gauge here
     this.renderGauge()
   },
 
-  data: function() {
+  data: function () {
     return {
       // track forceRender internally
       force_render: this.forceRender,
@@ -36,7 +38,7 @@ export default {
   },
 
   watch: {
-    forceRender: function(newValue) {
+    forceRender: function (newValue) {
       // force render should just take the new value
       this.force_render = newValue
     },
@@ -55,13 +57,13 @@ export default {
 
       // set up watchers for all
       _each(DEFAULT_WATCHERS, (prop) => {
-        this.$watch(prop, function(newValue, oldValue) {
+        this.$watch(prop, function (newValue, oldValue) {
           this.watchUpdater({ newValue, oldValue, prop })
         })
       })
     },
 
-    watchUpdater: function({ newValue, oldValue, prop }) {
+    watchUpdater: function ({ newValue, oldValue, prop }) {
       // update the config (only if not optional)
       this.config = updateConfig(this.config, {
         [prop]: newValue || oldValue,
@@ -72,7 +74,7 @@ export default {
       })
     },
 
-    renderGauge: function() {
+    renderGauge: function () {
       this.config = getConfig({
         PROPS: getProps(this),
         parentWidth: this.$el.parentNode.clientWidth,
@@ -80,9 +82,7 @@ export default {
       })
 
       // remove existing gauge (if any)
-      d3Select(this.$el)
-        .select("svg")
-        .remove()
+      d3Select(this.$el).select("svg").remove()
 
       this.d3_refs = render({
         container: this.$el,
@@ -96,7 +96,7 @@ export default {
       })
     },
 
-    _updateReadings: function() {
+    _updateReadings: function () {
       if (this.force_render) {
         this.renderGauge()
       } else {

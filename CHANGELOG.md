@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.4.0
+ - [`CORE`][0.11.0]
+ - migrated to `lodash-es` from `lodash` for better tree shaking. Exporting `themes` from core for better reusablility.
+ - removed `lodash` dependency. ref: https://codesandbox.io/s/fragrant-haze-f3cqz
+
 ## 1.3.1
 - link banner gif from github master tree
 
