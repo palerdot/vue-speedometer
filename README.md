@@ -12,11 +12,11 @@
 
 ## Usage:
 
-**NPM:**
-`npm install --save vue-speedometer` 
-
 **Yarn:**
 `yarn add vue-speedometer` 
+
+**NPM:**
+`npm install --save vue-speedometer` 
 
 ```javascript
 // import the component
@@ -29,6 +29,12 @@ export default {
 ```
 
 `vue-speedometer` is the name of the component to be used inside Vue templates
+
+## Ports:
+- React: [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer)
+- Svelte: [svelte-speedometer](https://github.com/palerdot/svelte-speedometer)
+
+## Examples:
 
 You can view [Live Examples here](https://palerdot.in/vue-speedometer/)
 
