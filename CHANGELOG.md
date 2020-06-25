@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.5.0
+- removed `@babel/runtime-corejs2` as dependency
+
 ## 1.4.0
  - [`CORE`][0.11.0]
  - migrated to `lodash-es` from `lodash` for better tree shaking. Exporting `themes` from core for better reusablility.
