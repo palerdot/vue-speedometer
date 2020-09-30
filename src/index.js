@@ -1,10 +1,14 @@
 import _debounce from "lodash-es/debounce"
 import _each from "lodash-es/each"
-
 import { select as d3Select } from "d3"
+
 import { getConfig, updateConfig } from "./core/config"
 import { render, update } from "./core/render"
 import props, { getProps, getPropKeys } from "./props"
+import { Transition, CustomSegmentLabelPosition } from "./core/enums"
+
+// export enums (for both Typescript and JS)
+export { Transition, CustomSegmentLabelPosition }
 
 export default {
   name: "vue-speedometer",
