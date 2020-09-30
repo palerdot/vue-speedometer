@@ -3,9 +3,13 @@
 import { mount } from "@vue/test-utils"
 import VueSpeedometer from "../index"
 
+const div = document.createElement("div")
+div.id = "root"
+document.body.appendChild(div)
+
 const _mount = (options) =>
   mount(VueSpeedometer, {
-    attachToDocument: true,
+    attachTo: div,
     ...options,
   })
 
@@ -75,6 +79,9 @@ describe("custom segment labels entering", () => {
       if (label.fontSize) {
         expect(styles["font-size"]).toEqual(label.fontSize)
       }
+
+      // destroy wrapper as per docs
+      full_dom_wrapper.destroy()
     })
   })
 })

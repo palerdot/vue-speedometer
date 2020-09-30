@@ -5,3 +5,5 @@ dist
 *.sublime-*
 .DS_Store
 *.code-workspace
+
+coverage
