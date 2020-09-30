@@ -18,6 +18,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with: 
+        submodules: recursive 
+
+    # - name: Init Submodule to base repo
+    #   run: git submodule update --init
 
     - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
