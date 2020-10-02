@@ -24,7 +24,7 @@ module.exports = {
   // collectCoverageFrom: null,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  coverageDirectory: "jest-coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -145,6 +145,7 @@ module.exports = {
   testPathIgnorePatterns: [
     "/node_modules/",
     "lib/d3-speedometer/src/__tests__/index.js",
+    "tests/",
   ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files

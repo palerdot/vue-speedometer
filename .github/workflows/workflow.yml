@@ -1,0 +1,47 @@
+name: Test Coverage
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with: 
+          submodules: recursive 
+
+      # - name: Init Submodule to base repo
+      #   run: git submodule update --init
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: yarn
+
+      # ref: https://github.com/cypress-io/github-action
+      - name: Setup cypress
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+
+      - name: Run the tests and generate coverage report
+        run: yarn full-test && yarn report:combined
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1.0.13
+      

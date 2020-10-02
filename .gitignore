@@ -5,3 +5,10 @@ dist
 *.sublime-*
 .DS_Store
 *.code-workspace
+
+coverage
+*-coverage
+cypress/videos
+
+.nyc_output
+reports

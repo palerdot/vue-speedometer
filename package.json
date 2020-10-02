@@ -6,53 +6,53 @@
     "name": "palerdot",
     "email": "palerdot@gmail.com"
   },
-  "main": "dist/index.js",
   "scripts": {
-    "prepare": ". ./.scripts/prepublish.sh",
-    "lint": "prettier -l **/src/**/*.js",
-    "lintfix": "prettier --write **/src/**/*.js",
-    "test": "jest --runInBand",
-    "test-watch": "npm run testonly -- --watch --watch-extensions js",
-    "storybook": "start-storybook -p 6006",
+    "lint": "prettier -l src/index.js src/props.js src/__tests__/**/**.js",
     "build-storybook": "build-storybook -o .out",
-    "publish-storybook": "bash .scripts/publish_storybook.sh",
-    "try-build": "NODE_ENV=production ./node_modules/.bin/babel --ignore ./src/__tests__,./src/**/*.test.js,./src/stories ./src --out-dir ./dist --no-comments",
+    "init-submodule": "git submodule update --init",
+    "lintfix": "prettier --write src/index.js src/props.js src/__tests__/**/**.js",
     "make-build": "npm run try-build && cp ./src/index.d.ts ./dist/",
-    "pull-submodules": "git submodule foreach git pull origin master"
+    "prepare": ". ./.scripts/prepublish.sh",
+    "publish-storybook": "bash .scripts/publish_storybook.sh",
+    "pull-submodules": "git submodule foreach git pull origin master",
+    "storybook": "start-storybook -p 6006",
+    "test": "jest --runInBand",
+    "pretest": "rm -rf .nyc_output || true",
+    "full-test": "jest --coverage && cypress run",
+    "mkdir:reports": "mkdir reports || true",
+    "precopy:reports": "npm run mkdir:reports",
+    "copy:reports": "cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json",
+    "precombine:reports": "npm run copy:reports && mkdir .nyc_output || true",
+    "combine:reports": "npx nyc merge reports && mv coverage.json .nyc_output/out.json",
+    "prereport:combined": "npm run combine:reports",
+    "report:combined": "npx nyc report --reporter lcov --reporter text --report-dir coverage",
+    "view-cypress-coverage": "npx nyc report",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test-watch": "npm run testonly -- --watch --watch-extensions js",
+    "test:components": "vue-cli-service test:components",
+    "try-build": "NODE_ENV=production ./node_modules/.bin/babel --ignore ./src/__tests__,./src/**/*.test.js,./src/stories ./src --out-dir ./dist --no-comments"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/palerdot/vue-speedometer.git"
-  },
-  "keywords": [
-    "vue",
-    "speedometer",
-    "gauge",
-    "d3"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/palerdot/vue-speedometer/issues"
-  },
-  "homepage": "https://github.com/palerdot/vue-speedometer#readme",
+  "main": "dist/index.js",
   "dependencies": {
-    "@babel/runtime": "^7.9.2",
+    "@babel/runtime": "^7.11.2",
     "d3": "^5.9.2",
     "lodash-es": "^4.17.15",
     "memoize-one": "^5.0.5"
   },
-  "peerDependencies": {
-    "vue": "^2.6.10"
-  },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/plugin-transform-modules-commonjs": "^7.9.0",
-    "@babel/plugin-transform-runtime": "^7.9.0",
-    "@babel/polyfill": "^7.8.7",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@cypress/code-coverage": "^3.8.1",
+    "@cypress/vue": "^1.0.0",
+    "@cypress/webpack-preprocessor": "^5.4.6",
+    "@istanbuljs/nyc-config-babel": "^3.0.0",
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-docs": "^5.3.17",
     "@storybook/addon-info": "^5.3.17",
@@ -61,15 +61,18 @@
     "@storybook/addons": "^5.3.17",
     "@storybook/theming": "^5.3.17",
     "@storybook/vue": "^5.3.17",
-    "@vue/server-test-utils": "^1.0.0-beta.29",
-    "@vue/test-utils": "^1.0.0-beta.29",
-    "babel-jest": "^25.1.0",
+    "@vue/server-test-utils": "^1.1.0",
+    "@vue/test-utils": "^1.1.0",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
+    "babel-plugin-istanbul": "^6.0.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "babel-plugin-source-map-support": "2.1.1",
+    "babel-plugin-source-map-support": "2.1.3",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-preset-minify": "^0.5.1",
     "babel-preset-vue": "^2.0.2",
+    "cypress": "*",
+    "cypress-vue-unit-test": "^3.5.1",
     "eslint": "^5.15.2",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
@@ -77,16 +80,39 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "git-url-parse": "^11.1.2",
-    "jest": "^25.1.0",
+    "jest": "^26.4.2",
     "jsdom": "^14.0.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.1.2",
     "sprintf-js": "^1.1.2",
     "storybook-addon-vue-info": "^1.4.2",
     "vue": "^2.6.10",
+    "vue-cli-plugin-cypress-experimental": "~1.2.0",
     "vue-loader": "^15.7.1",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.44.2",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.10"
+  },
+  "bugs": {
+    "url": "https://github.com/palerdot/vue-speedometer/issues"
   },
   "engines": {
     "node": ">=8.0",
     "npm": ">=3.0.0"
+  },
+  "homepage": "https://github.com/palerdot/vue-speedometer#readme",
+  "keywords": [
+    "vue",
+    "speedometer",
+    "gauge",
+    "d3"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/palerdot/vue-speedometer.git"
   }
 }

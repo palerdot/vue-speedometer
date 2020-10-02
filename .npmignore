@@ -21,5 +21,15 @@ stories
 .travis.yml
 
 yarn.lock
+yarn-error.log
+
+*-coverage
+coverage
+cypress*
+
+tests
+codecov.yml
+.github
+reports
 
 
