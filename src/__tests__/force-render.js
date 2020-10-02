@@ -1,4 +1,9 @@
 /*
+ * NOTE:
+ * IMPORTANT:
+ *
+ * This test limitation is fixed with e2e cypress tests (inside tests/)
+ *
  * IMPORTANT: Test limitation
  * @vue/test-utils uses jsdom which has a limitation of mimicking svg functionality
  *
