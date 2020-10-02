@@ -2,7 +2,7 @@
 
 ## 1.6.0
 - [`CORE`][0.13.1]
-- `CustomSegmentLabelPosition`, `Transition` types for both Typescript and JS. Resolves https://github.com/palerdot/react-d3-speedometer/issues/81
+- `CustomSegmentLabelPosition`, `Transition` types for both Typescript and JS. ref - https://codesandbox.io/s/modest-cookies-tnhqx?file=/src/App.vue
 - `100%` Test coverage
 - `codecov`, `github actions` integration
 - `cypress` e2e tests
