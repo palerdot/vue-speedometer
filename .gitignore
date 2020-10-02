@@ -11,3 +11,4 @@ coverage
 cypress/videos
 
 .nyc_output
+reports

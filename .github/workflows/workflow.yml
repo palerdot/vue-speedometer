@@ -16,25 +16,32 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      with: 
-        submodules: recursive 
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with: 
+          submodules: recursive 
 
-    # - name: Init Submodule to base repo
-    #   run: git submodule update --init
+      # ref: https://github.com/cypress-io/github-action
+      - name: Setup cypress
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
 
-    - name: Set up Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+      # - name: Init Submodule to base repo
+      #   run: git submodule update --init
 
-    - name: Install dependencies
-      run: npm install
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Run the tests and generate coverage report
-      run: npm run test -- --coverage
+      - name: Install dependencies
+        run: npm install
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1.0.13
+      - name: Run the tests and generate coverage report
+        run: npm run full-test && npm run report:combined
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1.0.13
       
