@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.6.0
+- [`CORE`][0.13.1]
+- `CustomSegmentLabelPosition`, `Transition` types for both Typescript and JS. Resolves https://github.com/palerdot/react-d3-speedometer/issues/81
+- `100%` Test coverage
+- `codecov`, `github actions` integration
+- `cypress` e2e tests
+
 ## 1.5.0
 - removed `@babel/runtime-corejs2` as dependency
 
