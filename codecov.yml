@@ -1,2 +1,2 @@
 codecov:
-  disable_default_path_fixes: true
+  disable_default_path_fixes: false

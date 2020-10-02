@@ -21,13 +21,6 @@ jobs:
         with: 
           submodules: recursive 
 
-      # ref: https://github.com/cypress-io/github-action
-      - name: Setup cypress
-        uses: cypress-io/github-action@v2
-        with:
-          browser: chrome
-          headless: true
-
       # - name: Init Submodule to base repo
       #   run: git submodule update --init
 
@@ -37,10 +30,17 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install
+        run: yarn
+
+      # ref: https://github.com/cypress-io/github-action
+      - name: Setup cypress
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
 
       - name: Run the tests and generate coverage report
-        run: npm run full-test && npm run report:combined
+        run: yarn full-test && yarn report:combined
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1.0.13
