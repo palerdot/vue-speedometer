@@ -5,7 +5,7 @@
 import { mount } from "cypress-vue-unit-test"
 import VueSpeedometer from "../../src/index.js"
 
-describe("Greetings", () => {
+describe("VueSpeedometer", () => {
   it("renders the component with correct value", () => {
     mount(VueSpeedometer, {
       propsData: {

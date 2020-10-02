@@ -41,6 +41,9 @@ export default {
     }
   },
 
+  // we had to watch for 'prop' changes in vue
+  // ref: https://stackoverflow.com/questions/44584292/how-to-listen-for-props-changes
+  // here we watch specifically for 'forceRender' which is what we are interested to render or update
   watch: {
     forceRender: function(newValue) {
       // force render should just take the new value
@@ -49,6 +52,9 @@ export default {
   },
 
   methods: {
+    // we had to watch for 'prop' changes in vue
+    // ref: https://stackoverflow.com/questions/44584292/how-to-listen-for-props-changes
+    // initing watchers here
     _initWatchers() {
       this.updateReadings = _debounce(this._updateReadings, 0, {
         leading: false,

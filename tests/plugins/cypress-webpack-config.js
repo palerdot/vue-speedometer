@@ -1,3 +1,6 @@
+// ref: https://vue-loader.vuejs.org/guide/#manual-setup
+const VueLoaderPlugin = require("vue-loader/lib/plugin")
+
 module.exports = {
   module: {
     rules: [
@@ -12,6 +15,14 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.vue$/,
+        loader: "vue-loader",
+      },
     ],
   },
+  plugins: [
+    // make sure to include the plugin!
+    new VueLoaderPlugin(),
+  ],
 }
