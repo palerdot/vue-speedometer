@@ -44,5 +44,9 @@ added in `plugins: [istanbul]`
 Generates code coverage and runs tests
 ```
 
+### Configuring `nyc`
+
+`nyc` is the command line tool for `istanbul`. It is currently configured in `nyc.config.js`.
+
 
 

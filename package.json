@@ -26,17 +26,12 @@
     "combine:reports": "npx nyc merge reports && mv coverage.json .nyc_output/out.json",
     "prereport:combined": "npm run combine:reports",
     "report:combined": "npx nyc report --reporter lcov --reporter text --report-dir coverage",
+    "view-cypress-coverage": "npx nyc report",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "test:components": "vue-cli-service test:components",
     "try-build": "NODE_ENV=production ./node_modules/.bin/babel --ignore ./src/__tests__,./src/**/*.test.js,./src/stories ./src --out-dir ./dist --no-comments"
-  },
-  "nyc": {
-    "report-dir": "cypress-coverage",
-    "extends": "@istanbuljs/nyc-config-babel",
-    "all": true,
-    "check-coverage": true
   },
   "main": "dist/index.js",
   "dependencies": {
