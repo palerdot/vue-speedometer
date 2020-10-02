@@ -9,3 +9,5 @@ dist
 coverage
 *-coverage
 cypress/videos
+
+.nyc_output
