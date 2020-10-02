@@ -92,7 +92,7 @@ declare module "vue-speedometer" {
   class VueSpeedometer<Props> extends Vue {}
 
   // named exports of all the types
-  export { Props, CustomSegmentLabel, CustomSegmentLabelPosition }
+  export { Props, CustomSegmentLabel, CustomSegmentLabelPosition, Transition }
 
   export default VueSpeedometer
 }
