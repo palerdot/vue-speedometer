@@ -49,10 +49,7 @@ describe("smooth update of values", () => {
     )
 
     expect(
-      full_dom_wrapper
-        .findAll("path.speedo-segment")
-        .at(0)
-        .attributes("fill")
+      full_dom_wrapper.findAll("path.speedo-segment").at(0).attributes("fill")
     ).toBe(`rgb(255, 71, 26)`) // rgb value of our default 'startColor'
 
     // set updated props

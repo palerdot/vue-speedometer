@@ -7,10 +7,10 @@
     "email": "palerdot@gmail.com"
   },
   "scripts": {
-    "lint": "prettier -l **/src/**/*.js",
+    "lint": "prettier -l src/index.js src/props.js src/__tests__/**/**.js",
     "build-storybook": "build-storybook -o .out",
     "init-submodule": "git submodule update --init",
-    "lintfix": "prettier --write **/src/**/*.js",
+    "lintfix": "prettier --write src/index.js src/props.js src/__tests__/**/**.js",
     "make-build": "npm run try-build && cp ./src/index.d.ts ./dist/",
     "prepare": ". ./.scripts/prepublish.sh",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
@@ -83,6 +83,7 @@
     "jest": "^26.4.2",
     "jsdom": "^14.0.0",
     "nyc": "^15.1.0",
+    "prettier": "^2.1.2",
     "sprintf-js": "^1.1.2",
     "storybook-addon-vue-info": "^1.4.2",
     "vue": "^2.6.10",
