@@ -84,6 +84,7 @@ declare module "vue-speedometer" {
 
     labelFontSize?: string
     valueTextFontSize?: string
+    valueTextFontWeight?: string
 
     paddingHorizontal?: number
     paddingVertical?: number

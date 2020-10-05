@@ -137,6 +137,10 @@ const prop_types = {
     type: String,
     required: true,
   },
+  valueTextFontWeight: {
+    type: String,
+    required: true,
+  },
 }
 
 // update the props with default values
