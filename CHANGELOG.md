@@ -2,7 +2,7 @@
 
 ## 1.7.0
 - [`CORE`][0.14.0]
-- `valueTextFontWeight` config/prop
+- `valueTextFontWeight` config/prop. ref: https://codesandbox.io/s/competent-grothendieck-73cz8?file=/src/App.vue
 - `cypress` tests for `valueTextFontWeight`
 
 ## 1.6.0
