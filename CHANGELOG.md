@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.7.0
+- [`CORE`][0.14.0]
+- `valueTextFontWeight` config/prop
+- `cypress` tests for `valueTextFontWeight`
+
 ## 1.6.0
 - [`CORE`][0.13.1]
 - `CustomSegmentLabelPosition`, `Transition` types for both Typescript and JS. ref - https://codesandbox.io/s/modest-cookies-tnhqx?file=/src/App.vue

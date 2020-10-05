@@ -2626,21 +2626,6 @@
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
 
-"@cypress/vue@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@cypress/vue/-/vue-1.0.0.tgz#be560170103ceacf844114d5a6d01d73873bc274"
-  integrity sha512-jYT12mkGPigSkWjOZ1ROPx1CtBi4s3jJ24ZJZDie9Xw/pMElJ8/4fsLzWiW0LSS4tzHGDZVsA421S8BZNzYpxQ==
-  dependencies:
-    "@babel/plugin-transform-modules-commonjs" "7.10.4"
-    "@cypress/code-coverage" "3.8.1"
-    "@cypress/webpack-preprocessor" "5.4.6"
-    "@intlify/vue-i18n-loader" "1.0.0"
-    "@vue/test-utils" "1.0.3"
-    babel-plugin-istanbul "6.0.0"
-    debug "4.2.0"
-    find-webpack "2.1.0"
-    unfetch "4.1.0"
-
 "@cypress/webpack-preprocessor@5.4.2":
   version "5.4.2"
   resolved "https://registry.yarnpkg.com/@cypress/webpack-preprocessor/-/webpack-preprocessor-5.4.2.tgz#d40fed6375b09dd16b266a045f4577e9c7a0299a"
@@ -2650,7 +2635,7 @@
     debug "4.1.1"
     lodash "4.17.19"
 
-"@cypress/webpack-preprocessor@5.4.6", "@cypress/webpack-preprocessor@^5.4.6":
+"@cypress/webpack-preprocessor@^5.4.6":
   version "5.4.6"
   resolved "https://registry.yarnpkg.com/@cypress/webpack-preprocessor/-/webpack-preprocessor-5.4.6.tgz#667f8007cbe6ee219ce7e45a7f1400d3e2401032"
   integrity sha512-78hWoTUUEncv647badwVbyszvmwI1r9GaY/xy7V0sz0VVC90ByuDkLpvN+J0VP6enthob4dIPXcm0f9Tb1UKQQ==
@@ -7179,13 +7164,6 @@ debug@4.1.1, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
   dependencies:
     ms "^2.1.1"
 
-debug@4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.2.0.tgz#7f150f93920e94c58f5574c2fd01a3110effe7f1"
-  integrity sha512-IX2ncY78vDTjZMFUdmsvIRFY2Cf4FnD0wRs+nQwJU8Lu99/tPFdb0VybiiMTPe3I6rQmwsqQqRBvxU+bZ/I8sg==
-  dependencies:
-    ms "2.1.2"
-
 debug@^3.0.0, debug@^3.1.0, debug@^3.1.1, debug@^3.2.5, debug@^3.2.6:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
@@ -8635,15 +8613,6 @@ find-webpack@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/find-webpack/-/find-webpack-2.0.0.tgz#babca80d1e56578e021a894c29e7706cb00d8918"
   integrity sha512-im6hYZ1QA99/r8IZp/FPuAyJhnDnQxhnGXEyOTl8eo/YDm3UnPsCGqG6sJN212isLa2jVrVsjpRX31usLaz03g==
-  dependencies:
-    debug "4.1.1"
-    find-yarn-workspace-root "1.2.1"
-    mocked-env "1.3.2"
-
-find-webpack@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/find-webpack/-/find-webpack-2.1.0.tgz#404c4775bd7c1b86904f658e052a9c178927857d"
-  integrity sha512-yQ7j/OnLGSzZ+kK8CCjvlKzQ/Utci34E1T7rKgH2ZCLQk4MrGKnHd90E5ki/3wDQ7InNIFYpIJ2LgpDUxCoi/g==
   dependencies:
     debug "4.1.1"
     find-yarn-workspace-root "1.2.1"
@@ -12050,7 +12019,7 @@ ms@2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
   integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
 
-ms@2.1.2, ms@^2.1.1:
+ms@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
