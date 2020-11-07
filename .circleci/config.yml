@@ -8,6 +8,12 @@ jobs:
       tag: 'lts'
     steps:
       - checkout
+      # we need submodule from core
+      # let us try to init the submodule
+      - run:
+        command: |
+          git submodule update --init --recursive
+        name: Init git submodule
       - node/install-packages:
           pkg-manager: yarn
       - run:
