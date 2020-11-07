@@ -11,8 +11,7 @@ jobs:
       # we need submodule from core
       # let us try to init the submodule
       - run:
-        command: |
-          git submodule update --init --recursive
+        command: git submodule update --init --recursive
         name: Init git submodule
       - node/install-packages:
           pkg-manager: yarn
