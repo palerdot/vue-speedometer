@@ -2,7 +2,7 @@
 
 **vue-speedometer** is a Vue component library for showing speedometer like gauge using d3.
 
-[![Build Status](https://travis-ci.org/palerdot/vue-speedometer.svg?branch=master)](https://travis-ci.org/palerdot/vue-speedometer)
+[![CircleCI Build Status](https://circleci.com/gh/palerdot/vue-speedometer.svg?style=svg)](https://circleci.com/gh/palerdot/vue-speedometer)
 [![Codecov](https://img.shields.io/codecov/c/gh/palerdot/vue-speedometer)](https://codecov.io/gh/palerdot/vue-speedometer)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
