@@ -74,7 +74,7 @@ export default {
     },
 
     watchUpdater: function ({ newValue, oldValue, prop }) {
-      const updated_config = Object.assign(
+      const newConfig = Object.assign(
         {
           [prop]: newValue || oldValue,
         },
@@ -90,7 +90,7 @@ export default {
       )
 
       // update the config (only if not optional)
-      this.config = updateConfig(this.config, updated_config)
+      this.config = updateConfig(this.config, newConfig)
 
       this.$nextTick().then(() => {
         this.updateReadings()
