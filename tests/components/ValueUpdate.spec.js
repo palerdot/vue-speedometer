@@ -7,8 +7,7 @@ const ValueUpdate = {
     <div>{{greeting}}</div>
     <button id="reset-value" v-on:click="resetValue">Reset to zero</button>
     <button id="update-value" v-on:click="updateValue">Update Value</button>
-    <vue-speedometer 
-      :segments="segments" 
+    <vue-speedometer
       :value="value" 
     />
   </div>`,
