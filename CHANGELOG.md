@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.8.0
+- **Bugfix**: Always take new value for `value` prop. This fixes the bug when value will not go to `0`. 
+Resolves https://github.com/palerdot/vue-speedometer/issues/22
+
 ## 1.7.0
 - [`CORE`][0.14.0]
 - `valueTextFontWeight` config/prop. ref: https://codesandbox.io/s/competent-grothendieck-73cz8?file=/src/App.vue
