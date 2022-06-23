@@ -80,7 +80,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "git-url-parse": "^11.1.2",
     "jest": "^26.4.2",
-    "jsdom": "^14.0.0",
+    "jsdom": "^16.5.0",
     "nyc": "^15.1.0",
     "prettier": "^2.1.2",
     "sprintf-js": "^1.1.2",
