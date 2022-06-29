@@ -11,6 +11,8 @@
 
 ![vue-speedometer](https://raw.githubusercontent.com/palerdot/vue-speedometer/master/speedo.gif)
 
+Note: v2.x is compatible with `Vue 3`. Please use latest v1.x (v1.8.0 at the time of writing) if you are using `Vue 2`.
+
 ## Usage:
 
 **Yarn:**
