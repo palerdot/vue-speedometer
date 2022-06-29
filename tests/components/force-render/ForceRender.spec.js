@@ -1,4 +1,4 @@
-import { mount } from "cypress-vue-unit-test"
+import { mount } from "cypress/vue"
 import VueSpeedometer from "../../../src/index.js"
 
 const ForceRender = {
@@ -25,13 +25,13 @@ const ForceRender = {
   },
 
   methods: {
-    forceRenderComponent: function() {
+    forceRenderComponent: function () {
       this.forceRender = true
       this.value = 417
       this.segments = 10
     },
 
-    normalUpdateComponent: function() {
+    normalUpdateComponent: function () {
       this.value = 777
     },
   },

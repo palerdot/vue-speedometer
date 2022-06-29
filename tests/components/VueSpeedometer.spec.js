@@ -1,8 +1,4 @@
-/// <reference types="cypress" />
-// NOTE: enable this once this package moves to @cypress/vue
-// import { mount } from "@cypress/vue"
-// IMPORTANT: also note paths in tests/support/index.js
-import { mount } from "cypress-vue-unit-test"
+import { mount } from "cypress/vue"
 import VueSpeedometer from "../../src/index.js"
 
 describe("VueSpeedometer", () => {

@@ -1,5 +1,4 @@
-import { mountCallback } from "cypress-vue-unit-test"
-import { mount } from "cypress-vue-unit-test"
+import { mount } from "cypress/vue"
 import VueSpeedometer from "../../src/index.js"
 
 const ValueUpdate = {
