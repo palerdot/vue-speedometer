@@ -93,7 +93,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "peerDependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.10 || ^3.0.0"
   },
   "bugs": {
     "url": "https://github.com/palerdot/vue-speedometer/issues"
