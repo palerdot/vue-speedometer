@@ -88,6 +88,8 @@ declare module "vue-speedometer" {
 
     paddingHorizontal?: number
     paddingVertical?: number
+
+    svgAriaLabel?: string
   }
 
   class VueSpeedometer<Props> extends Vue {}

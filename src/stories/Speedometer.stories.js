@@ -4,13 +4,16 @@ export default { title: "vue-speedometer" }
 
 const textColor = "#AAA"
 
-export const DefaultWithNoConfig = () =>
-  `<vue-speedometer textColor="${textColor}" />`
+export const DefaultWithNoConfig = () => ({
+  template: `<vue-speedometer textColor="${textColor}" />`,
+})
 
-export const ConfiguringValues = () =>
-  `<vue-speedometer :value="333" textColor="${textColor}" />`
+export const ConfiguringValues = () => ({
+  template: `<vue-speedometer :value="333" textColor="${textColor}" />`,
+})
 
-export const CustomSegmentLabels = () => `
+export const CustomSegmentLabels = () => ({
+  template: `
   <div>
     <vue-speedometer 
       :width="500"
@@ -82,9 +85,11 @@ export const CustomSegmentLabels = () => `
       textColor="#d8dee9"
     />
   </div>
-`
+`,
+})
 
-export const CustomSegmentColors = () => `
+export const CustomSegmentColors = () => ({
+  template: `
   <div>
     <vue-speedometer 
       :maxSegmentLabels="12"
@@ -103,9 +108,11 @@ export const CustomSegmentColors = () => `
       textColor="${textColor}"
     />
   </div>
-`
+`,
+})
 
-export const CustomSegmentStops = () => `
+export const CustomSegmentStops = () => ({
+  template: `
   <div>
     <vue-speedometer 
       :needleHeightRatio="0.7"
@@ -138,7 +145,8 @@ export const CustomSegmentStops = () => `
       textColor="${textColor}"
     />
   </div>
-`
+`,
+})
 
 export const FluidWidthView = () => ({
   data() {
@@ -167,7 +175,8 @@ export const FluidWidthView = () => ({
   `,
 })
 
-export const NeedleTransitionDuration = () => `
+export const NeedleTransitionDuration = () => ({
+  template: `
   <div>
     <vue-speedometer 
       :value="333"
@@ -184,7 +193,8 @@ export const NeedleTransitionDuration = () => `
       textColor="${textColor}"
     />
   </div>
-`
+`,
+})
 
 export const ForceRenderTheComponent = () => ({
   data() {
@@ -246,7 +256,8 @@ export const ForceRenderTheComponent = () => ({
 `,
 })
 
-export const ConfiguringTheFormatForValuesDisplayed = () => `
+export const ConfiguringTheFormatForValuesDisplayed = () => ({
+  template: `
   <div>
     <vue-speedometer
       :maxValue="150"
@@ -264,9 +275,11 @@ export const ConfiguringTheFormatForValuesDisplayed = () => `
       textColor="${textColor}"
     />
   </div>
-`
+`,
+})
 
-export const CustomCurrentValueText = () => `
+export const CustomCurrentValueText = () => ({
+  template: `
   <div>
     <vue-speedometer
       :value="333"
@@ -277,9 +290,11 @@ export const CustomCurrentValueText = () => `
       textColor="${textColor}"
     />
   </div>
-`
+`,
+})
 
-export const CustomCurrentValuePlaceholderStyleForEgValue = () => `
+export const CustomCurrentValuePlaceholderStyleForEgValue = () => ({
+  template: `
   <div>
     <vue-speedometer
       :value="333"
@@ -291,9 +306,11 @@ export const CustomCurrentValuePlaceholderStyleForEgValue = () => `
       textColor="${textColor}"
     />
   </div>
-`
+`,
+})
 
-export const ConfigureNeedleLengthAndFontSizes = () => `
+export const ConfigureNeedleLengthAndFontSizes = () => ({
+  template: `
   <div>
     <vue-speedometer
       :value="333"
@@ -303,9 +320,11 @@ export const ConfigureNeedleLengthAndFontSizes = () => `
       textColor="${textColor}"
     />
   </div>
-`
+`,
+})
 
-export const GradientEffectWithLargeNumberOfSegmentsAndMaxSegmentLabelsConfig = () => `
+export const GradientEffectWithLargeNumberOfSegmentsAndMaxSegmentLabelsConfig = () => ({
+  template: `
   <div>
     <vue-speedometer
       :needleHeightRatio="0.7"
@@ -315,9 +334,11 @@ export const GradientEffectWithLargeNumberOfSegmentsAndMaxSegmentLabelsConfig = 
       textColor="${textColor}"
     />
   </div>
-`
+`,
+})
 
-export const NoSegmentLabels = () => `
+export const NoSegmentLabels = () => ({
+  template: `
   <div>
     <vue-speedometer
       :maxSegmentLabels="0" 
@@ -334,7 +355,8 @@ export const NoSegmentLabels = () => `
       textColor="${textColor}"
     />
   </div>
-`
+`,
+})
 
 export const NormalUpdationOfValues = () => ({
   created() {
@@ -370,7 +392,8 @@ export const NormalUpdationOfValues = () => ({
   `,
 })
 
-export const CustomizeFontSizesAndSpacing = () => `
+export const CustomizeFontSizesAndSpacing = () => ({
+  template: `
   <div>
     <vue-speedometer
       :value="333"
@@ -384,4 +407,5 @@ export const CustomizeFontSizesAndSpacing = () => `
       textColor="${textColor}"
     />
   </div>
-`
+`,
+})

@@ -1,22 +1,20 @@
-const path = require("path")
-
 module.exports = {
   stories: [
-    // "../stories/*.stories.js",
-    "../src/stories/*.stories.js",
+    "../src/stories/**/*.stories.mdx",
+    "../src/stories/**/*.stories.@(js|jsx|ts|tsx)",
   ],
-  addons: [
-    // "@storybook/addon-knobs/register",
-    "@storybook/addon-storysource",
-    {
-      name: "@storybook/addon-docs",
-      options: {
-        vueDocgenOptions: {
-          alias: {
-            "@": path.resolve(__dirname, "../"),
-          },
-        },
+  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
+  core: {
+    builder: "@storybook/builder-vite", // 👈 The builder enabled here.
+  },
+  async viteFinal(config, { configType }) {
+    // customize the Vite config here
+    return {
+      ...config,
+      define: {
+        ...config.define,
+        global: "window",
       },
-    },
-  ],
+    }
+  },
 }
