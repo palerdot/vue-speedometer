@@ -43,6 +43,7 @@
     "build:main": "NODE_ENV=production vite build",
     "build:slim": "echo 'porumai ... slim build coming soon'",
     "copy:types": "cp ./src/index.d.ts ./dist/",
+    "prepublishOnly": "npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
