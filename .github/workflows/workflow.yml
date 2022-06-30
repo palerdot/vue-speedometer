@@ -38,6 +38,8 @@ jobs:
         with:
           browser: chrome
           component: true
+          # just perform install
+          runTests: false
 
       - name: Run the tests and generate coverage report
         run: yarn full-test && yarn report:combined
