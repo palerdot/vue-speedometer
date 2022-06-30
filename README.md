@@ -78,6 +78,7 @@ You can view [Live Examples here](https://palerdot.in/vue-speedometer/)
 | valueTextFontWeight | String         | bold     | Font weight for current value text. Any valid font weight identifier (500, bold etc) can be used. |
 | paddingHorizontal |	Number |	0  |	Provides right/left space for the label text. Takes a number (without explicit unit, unit will be taken from dimensionUnit config which defaults to px). Helpful when using a bigger font size for label texts. |
 | paddingVertical   | Number |	0  |	Provides top/bottom space for the current value label text below the needle. Takes a number (without explicit unit, unit will be taken from dimensionUnit config which defaults to px). Helpful when using a bigger font size for label texts. |
+| svgAriaLabel      | String      | Vue Speedometer     | SVG aria-label property for Accessibility purposes |
 
 ## Examples
 
