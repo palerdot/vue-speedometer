@@ -11,6 +11,8 @@
 
 ![vue-speedometer](https://raw.githubusercontent.com/palerdot/vue-speedometer/master/speedo.gif)
 
+This is the main branch for bug fixes for `v1.x`.
+
 ## Usage:
 
 **Yarn:**
