@@ -141,6 +141,10 @@ const prop_types = {
     type: String,
     required: true,
   },
+  svgAriaLabel: {
+    type: String,
+    required: true,
+  },
 }
 
 // update the props with default values
@@ -154,6 +158,9 @@ const props = mapValues(prop_types, (value, key) => {
     },
     segmentColors: function () {
       return []
+    },
+    svgAriaLabel: function () {
+      return "Vue Speedometer"
     },
   }
 
