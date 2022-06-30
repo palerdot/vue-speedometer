@@ -81,7 +81,7 @@
     "vue": "^3.2.37"
   },
   "peerDependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.0.0"
   },
   "bugs": {
     "url": "https://github.com/palerdot/vue-speedometer/issues"
