@@ -37,7 +37,6 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
-          headless: true
 
       - name: Run the tests and generate coverage report
         run: yarn full-test && yarn report:combined
