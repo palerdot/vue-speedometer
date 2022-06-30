@@ -1,4 +1,5 @@
 module.exports = {
+  // extends: "@istanbuljs/nyc-config-babel",
   "report-dir": "cypress-coverage",
   "check-coverage": true,
   include: ["src"],

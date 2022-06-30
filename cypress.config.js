@@ -4,7 +4,11 @@ module.exports = defineConfig({
   video: false,
 
   component: {
-    setupNodeEvents(on, config) {},
+    setupNodeEvents(on, config) {
+      require("@cypress/code-coverage/task")(on, config)
+
+      return config
+    },
     specPattern: "tests/components/**/*.spec.js*",
     devServer: {
       framework: "vue",
