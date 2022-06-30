@@ -12,3 +12,4 @@ cypress/videos
 
 .nyc_output
 reports
+instrumented

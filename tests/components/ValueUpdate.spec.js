@@ -1,5 +1,7 @@
 import { mount } from "cypress/vue"
-import VueSpeedometer from "../../src/index.js"
+// import VueSpeedometer from "../../src/index.js"
+// NOTE: we are manually instrumenting using NYC and using it for running cypress tests
+import VueSpeedometer from "../../instrumented/index.js"
 
 const ValueUpdate = {
   template: `<div>
