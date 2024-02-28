@@ -57,7 +57,7 @@ export default defineConfig({
     alias: {
       // ref: https://github.com/vitejs/vite/discussions/4158
       // needed to enable template compiling for cypress
-      vue: "vue/dist/vue.esm-bundler.js",
+      // vue: "vue/dist/vue.esm-bundler.js",
     },
   },
   plugins: [vue()],
