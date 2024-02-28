@@ -93,8 +93,8 @@
     "url": "https://github.com/palerdot/vue-speedometer/issues"
   },
   "engines": {
-    "node": ">=8.0",
-    "npm": ">=3.0.0"
+    "node": ">=18.0",
+    "npm": ">=10.0.0"
   },
   "homepage": "https://github.com/palerdot/vue-speedometer#readme",
   "keywords": [
