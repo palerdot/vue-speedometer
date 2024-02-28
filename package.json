@@ -51,7 +51,7 @@
   "dependencies": {
     "d3": "^5.9.2",
     "lodash-es": "^4.17.15",
-    "memoize-one": "^5.0.5"
+    "memoize-one": "^6.0.0"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
