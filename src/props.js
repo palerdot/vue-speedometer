@@ -149,7 +149,7 @@ const prop_types = {
   segmentValueFormatter: {
     type: Function,
     required: false,
-  }
+  },
 }
 
 // update the props with default values
