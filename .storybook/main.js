@@ -3,10 +3,9 @@ module.exports = {
     "../src/stories/**/*.stories.mdx",
     "../src/stories/**/*.stories.@(js|jsx|ts|tsx)",
   ],
+
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
-  core: {
-    builder: "@storybook/builder-vite", // 👈 The builder enabled here.
-  },
+
   async viteFinal(config, { configType }) {
     // customize the Vite config here
     return {
@@ -17,4 +16,13 @@ module.exports = {
       },
     }
   },
+
+  framework: {
+    name: "@storybook/vue3-vite",
+    options: {}
+  },
+
+  docs: {
+    autodocs: true
+  }
 }

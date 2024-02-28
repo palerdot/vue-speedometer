@@ -145,6 +145,11 @@ const prop_types = {
     type: String,
     required: true,
   },
+  // ref: https://vuejs.org/guide/components/props.html
+  segmentValueFormatter: {
+    type: Function,
+    required: false,
+  }
 }
 
 // update the props with default values
