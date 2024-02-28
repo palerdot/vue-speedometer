@@ -1,9 +1,9 @@
 import path from "path"
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
-import { terser } from "rollup-plugin-terser"
+import terser from "@rollup/plugin-terser"
 import { nodeResolve } from "@rollup/plugin-node-resolve"
-import analyze from "rollup-plugin-analyzer"
+// import analyze from "rollup-plugin-analyzer"
 
 const devMode = process.env.NODE_ENV === "development"
 
