@@ -74,7 +74,7 @@
     "@storybook/vue3": "^6.5.9",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/compiler-sfc": "^3.2.37",
-    "@vue/test-utils": "^2.0.0",
+    "@vue/test-utils": "^2.4.4",
     "cypress": "^10.3.0",
     "git-url-parse": "^11.1.2",
     "happy-dom": "^13.6.2",
