@@ -1,6 +1,6 @@
 {
   "name": "vue-speedometer",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Vue component for showing speedomenter like gauge with d3",
   "author": {
     "name": "palerdot",
