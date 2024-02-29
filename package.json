@@ -35,7 +35,7 @@
     "pretest": "rm -rf .nyc_output || true",
     "full-test": "vitest run && yarn instrument-code && yarn cy:run && yarn clean:instrumented-code",
     "clean:instrumented-code": "rm -rf instrumented",
-    "instrument-code": "pnpm clean:instrumented-code && npx nyc instrument --compact=false src instrumented && cp -R src/core instrumented/",
+    "instrument-code": "npm clean:instrumented-code && npx nyc instrument --compact=false src instrumented && cp -R src/core instrumented/",
     "mkdir:reports": "mkdir reports || true",
     "precopy:reports": "npm run mkdir:reports",
     "copy:reports": "cp cypress-coverage/coverage-final.json reports/from-cypress.json || true",
