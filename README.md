@@ -38,6 +38,16 @@ export default {
 
 `vue-speedometer` is the name of the component to be used inside Vue templates
 
+### Slim Build (Experimental):
+
+There is a `Slim` build available without bundling `d3`. This project uses `d3` *micro bundles*. If your project also uses `d3` *microbundles*, you can opt for **slim build**. Necessary `d3` dependencies required for slim build to work are - `d3-array`, `d3-color`, `d3-ease`, `d3-format`, `d3-interpolate`, `d3-scale`, `d3-selection`, `d3-shape`, `d3-transition`. 
+```javascript
+// sample slim build usage
+import VueSpeedometer from "vue-speedometer/slim"
+// and use it
+<VueSpeedometer />
+```
+
 ## Ports:
 - React: [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer)
 - Svelte: [svelte-speedometer](https://github.com/palerdot/svelte-speedometer)
