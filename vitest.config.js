@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [Vue()],
   test: {
     globals: true,
-    environment: "jsdom",
+    environment: "happy-dom",
     // spec.js belongs to cypress
     include: ["src/**/*.test.js"],
   },

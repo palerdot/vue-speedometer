@@ -145,6 +145,11 @@ const prop_types = {
     type: String,
     required: true,
   },
+  // ref: https://vuejs.org/guide/components/props.html
+  segmentValueFormatter: {
+    type: Function,
+    required: false,
+  },
 }
 
 // update the props with default values
@@ -171,20 +176,5 @@ const props = mapValues(prop_types, (value, key) => {
     required: false,
   }
 })
-
-// helper function to get props values from 'this' instance
-export function getProps(instance) {
-  const keys = _keys(prop_types)
-  let PROPS = {}
-  _each(keys, (key) => {
-    PROPS[key] = instance[key]
-  })
-
-  return PROPS
-}
-
-export function getPropKeys() {
-  return _keys(prop_types)
-}
 
 export default props

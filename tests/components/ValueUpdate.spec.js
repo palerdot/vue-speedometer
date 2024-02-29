@@ -1,41 +1,14 @@
 import { mount } from "cypress/vue"
-// import VueSpeedometer from "../../src/index.js"
+// import VueSpeedometer from "../../src/index.vue"
 // NOTE: we are manually instrumenting using NYC and using it for running cypress tests
-import VueSpeedometer from "../../instrumented/index.js"
-
-const ValueUpdate = {
-  template: `<div>
-    <div>{{greeting}}</div>
-    <button id="reset-value" v-on:click="resetValue">Reset to zero</button>
-    <button id="update-value" v-on:click="updateValue">Update Value</button>
-    <vue-speedometer
-      :value="value" 
-    />
-  </div>`,
-
-  components: { VueSpeedometer },
-
-  data() {
-    return {
-      greeting: "porumai ... wait and hope !!!",
-      value: 333,
-    }
-  },
-
-  methods: {
-    resetValue: function () {
-      this.value = 0
-    },
-
-    updateValue: function () {
-      this.value = 333
-    },
-  },
-}
+// import VueSpeedometer from "../../instrumented/index.vue"
+import ValueUpdate from "./ValueUpdate.vue"
 
 describe("VueSpeedometer", () => {
   it("Updates component correctly", () => {
-    mount(ValueUpdate)
+    mount(ValueUpdate, {
+      props: {},
+    })
     // now we can use any Cypress command to interact with the component
     // https://on.cypress.io/api
     cy.get(".current-value").contains("333")

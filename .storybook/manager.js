@@ -1,8 +1,9 @@
 import { addons } from "@storybook/addons"
-import { create } from "@storybook/theming/create"
+import { themes, create } from "@storybook/theming/create"
 import theme from "../src/core/theme"
 
 const speedoTheme = create({
+  ...themes.dark,
   ...theme,
 
   brandTitle: "vue-speedometer",

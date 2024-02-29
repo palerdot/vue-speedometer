@@ -11,9 +11,14 @@
 
 ![vue-speedometer](https://raw.githubusercontent.com/palerdot/vue-speedometer/master/speedo.gif)
 
-Note: v2.x is compatible with `Vue 3`. Please use latest v1.x (v1.8.0 at the time of writing) if you are using `Vue 2`.
+**IMPORTANT** `v3.0` is released which is a complete rewrite with composition api/SFC (single file components). Minimum required vue version is `v3.3`. If you are using Vue 3 composition api, please upgrade to `v3`
+
+Note: v2.x is still compatible with `Vue 3`. Please use latest v1.x (v1.8.0 at the time of writing) if you are using `Vue 2`.
 
 ## Usage:
+
+**pnpm:**
+`pnpm add vue-speedometer` 
 
 **Yarn:**
 `yarn add vue-speedometer` 
@@ -23,15 +28,26 @@ Note: v2.x is compatible with `Vue 3`. Please use latest v1.x (v1.8.0 at the tim
 
 ```javascript
 // import the component
+<script setup>
 import VueSpeedometer from "vue-speedometer"
+</script>
 // and use it in your component like
-export default {
-  components: { VueSpeedometer }, 
-  template: `<vue-speedometer />`,
-}
+<template>
+  <VueSpeedometer />
+</template>
 ```
 
 `vue-speedometer` is the name of the component to be used inside Vue templates
+
+### Slim Build (Experimental):
+
+There is a `Slim` build available without bundling `d3`. This project uses `d3` *micro bundles*. If your project also uses `d3` *microbundles*, you can opt for **slim build**. Necessary `d3` dependencies required for slim build to work are - `d3-array`, `d3-color`, `d3-ease`, `d3-format`, `d3-interpolate`, `d3-scale`, `d3-selection`, `d3-shape`, `d3-transition`. 
+```javascript
+// sample slim build usage
+import VueSpeedometer from "vue-speedometer/slim"
+// and use it
+<VueSpeedometer />
+```
 
 ## Ports:
 - React: [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer)
@@ -69,6 +85,7 @@ You can view [Live Examples here](https://palerdot.in/vue-speedometer/)
 | ringWidth | Number         | 60     | Width of the speedometer ring. |
 | textColor | String         | #666     | Should be a valid color code - colorname, hexadecimal name or rgb value. Used for both showing the current value and the segment values |
 | valueFormat | String       |  | should be a valid format for [d3-format](https://github.com/d3/d3-format#locale_format). By default, no formatter is used. You can use a valid d3 format identifier (for eg: `d` to convert float to integers), to format the values. **Note:** This formatter affects all the values (current value, segment values) displayed in the speedometer |
+| segmentValueFormatter | Function | value => value     | Custom segment values formatter function. This function is applied after 'valueFormat' prop if present. |
 | currentValueText | String | ${value} | Should be provided a string which should have **${value}** placeholder which will be replaced with current value. By default, current value is shown (formatted with `valueFormat`). For example, if current Value is 333 if you would like to show `Current Value: 333`, you should provide a string **`Current Value: ${value}`**. See [Live Example](https://palerdot.in/vue-speedometer/?selectedKind=vue-speedometer&selectedStory=Custom%20Current%20Value%20Text&full=0&down=1&left=1&panelRight=0) |
 | currentValuePlaceholderStyle | String | ${value} | Should be provided a placeholder string which will be replaced with current value in `currentValueTextProp`. For example: you can use ruby like interpolation by giving following props - `<vue-speedometer    currentValueText="Current Value: #{value}" currentValuePlaceholderStyle={"#{value}"} />`. This is also helpful if you face `no-template-curly-in-string` eslint warnings and would like to use different placeholder for current value |
 | customSegmentStops | Array         | []     | Array of values **starting** at `min` value, and **ending** at `max` value. This configuration is useful if you would like to split the segments at custom points or have unequal segments at preferred values. If the values does not begin and end with `min` and `max` value respectively, an error will be thrown. This configuration will override `segments` prop, since total number of segments will be `length - 1` of `customSegmentProps`. For example, `[0, 50, 75, 100]` value will have three segments - `0-50`, `50-75`, `75-100`. See [Live Example](https://palerdot.in/vue-speedometer/?path=/story/vue-speedometer--custom-segment-stops) |

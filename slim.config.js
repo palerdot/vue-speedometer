@@ -29,19 +29,36 @@ function terserConfig() {
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
+    outDir: path.resolve(__dirname, "dist/slim"),
     lib: {
       name: "VueSpeedometer",
       entry: path.resolve(__dirname, "src/index.vue"),
-      fileName: (format) => `vue-speedometer.${format}.js`,
+      // fileName: (format) => `vue-speedometer.${format}.js`,
+      formats: ["es"],
+      fileName: () => "index.js",
     },
     rollupOptions: {
-      external: ["vue"],
+      external: [
+        "vue",
+        "d3-array",
+        "d3-color",
+        "d3-ease",
+        "d3-format",
+        "d3-interpolate",
+        "d3-scale",
+        "d3-selection",
+        "d3-shape",
+        "d3-transition",
+      ],
       output: {
         globals: {
           vue: "Vue",
         },
         sourcemap: devMode ? "inline" : false,
         plugins: [terserConfig()],
+      },
+      treeshake: {
+        moduleSideEffects: false,
       },
       // IMPORTANT: This plugins is different from output plugins
       plugins: [
