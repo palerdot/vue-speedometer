@@ -1,46 +1,13 @@
 import { mount } from "cypress/vue"
-// import VueSpeedometer from "../../../src/index.js"
-import VueSpeedometer from "../../../instrumented/index.js"
-
-const ForceRender = {
-  template: `<div>
-    <div>{{greeting}}</div>
-    <button id="force-render" v-on:click="forceRenderComponent">Force Render</button>
-    <button id="normal-update" v-on:click="normalUpdateComponent">Normal update</button>
-    <vue-speedometer 
-      :segments="segments" 
-      :value="value" 
-      :forceRender="forceRender" 
-    />
-  </div>`,
-
-  components: { VueSpeedometer },
-
-  data() {
-    return {
-      greeting: "porumai ... wait and hope !!!",
-      value: 333,
-      forceRender: false,
-      segments: 5,
-    }
-  },
-
-  methods: {
-    forceRenderComponent: function () {
-      this.forceRender = true
-      this.value = 417
-      this.segments = 10
-    },
-
-    normalUpdateComponent: function () {
-      this.value = 777
-    },
-  },
-}
+// import VueSpeedometer from "../../../src/index.vue"
+// import VueSpeedometer from "../../../instrumented/index.vue"
+import ForceRender from "./ForceRender.vue"
 
 describe("VueSpeedometer", () => {
   it("updates component normally", () => {
-    mount(ForceRender)
+    mount(ForceRender, {
+      props: {},
+    })
 
     // now we can use any Cypress command to interact with the component
     // https://on.cypress.io/api
@@ -58,7 +25,9 @@ describe("VueSpeedometer", () => {
   })
 
   it("force renders the component with correct value", () => {
-    mount(ForceRender)
+    mount(ForceRender, {
+      props: {},
+    })
 
     // now we can use any Cypress command to interact with the component
     // https://on.cypress.io/api

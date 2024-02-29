@@ -1,6 +1,6 @@
 import { mount } from "cypress/vue"
-// import VueSpeedometer from "../../src/index.js"
-import VueSpeedometer from "../../instrumented/index.js"
+// import VueSpeedometer from "../../src/index.vue"
+import VueSpeedometer from "../../instrumented/index.vue"
 
 describe("VueSpeedometer", () => {
   it("renders the component with correct value", () => {
