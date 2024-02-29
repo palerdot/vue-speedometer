@@ -1,5 +1,9 @@
 # Change Log
 
+## `v3.0.1`
+
+- `v3` General Availability - Happy Vue Coding!
+
 ## v3.0.0-rc0
 
 - `Vue 3 Support - SFC/composition api`: Rewrite with SFC and composition api
