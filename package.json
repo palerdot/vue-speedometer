@@ -70,6 +70,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@storybook/addon-essentials": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
+    "@storybook/manager-api": "^7.6.17",
     "@storybook/theming": "^7.6.17",
     "@storybook/vue3": "^7.6.17",
     "@storybook/vue3-vite": "^7.6.17",

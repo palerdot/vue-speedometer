@@ -61,6 +61,9 @@ devDependencies:
   '@storybook/addon-links':
     specifier: ^7.6.17
     version: 7.6.17(react@18.2.0)
+  '@storybook/manager-api':
+    specifier: ^7.6.17
+    version: 7.6.17(react-dom@18.2.0)(react@18.2.0)
   '@storybook/theming':
     specifier: ^7.6.17
     version: 7.6.17(react-dom@18.2.0)(react@18.2.0)
@@ -1420,7 +1423,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.23.5
-      '@babel/parser': 7.23.9
+      '@babel/parser': 7.24.0
       '@babel/types': 7.24.0
     dev: true
 
@@ -1443,7 +1446,7 @@ packages:
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/parser': 7.23.9
+      '@babel/parser': 7.24.0
       '@babel/types': 7.24.0
       debug: 4.3.4(supports-color@8.1.1)
       globals: 11.12.0
