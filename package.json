@@ -90,7 +90,7 @@
     "vue": "^3.4.20"
   },
   "peerDependencies": {
-    "vue": "^3.0.0"
+    "vue": "^3.3.0"
   },
   "bugs": {
     "url": "https://github.com/palerdot/vue-speedometer/issues"
