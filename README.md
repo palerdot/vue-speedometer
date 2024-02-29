@@ -28,12 +28,13 @@ Note: v2.x is still compatible with `Vue 3`. Please use latest v1.x (v1.8.0 at t
 
 ```javascript
 // import the component
+<script setup>
 import VueSpeedometer from "vue-speedometer"
+</script>
 // and use it in your component like
-export default {
-  components: { VueSpeedometer }, 
-  template: `<vue-speedometer />`,
-}
+<template>
+  <VueSpeedometer />
+</template>
 ```
 
 `vue-speedometer` is the name of the component to be used inside Vue templates
