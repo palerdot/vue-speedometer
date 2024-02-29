@@ -3,7 +3,7 @@
 import { setup } from "@storybook/vue3"
 
 // DEVELOPMENT: 'src/index.js'
-import VueSpeedometer from "../src/index"
+import VueSpeedometer from "../src/index.vue"
 // PRODUCTION build testing
 // import VueSpeedometer from "../dist/index"
 //
