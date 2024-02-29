@@ -11,9 +11,14 @@
 
 ![vue-speedometer](https://raw.githubusercontent.com/palerdot/vue-speedometer/master/speedo.gif)
 
-Note: v2.x is compatible with `Vue 3`. Please use latest v1.x (v1.8.0 at the time of writing) if you are using `Vue 2`.
+**IMPORTANT** `v3.0` is released which is a complete rewrite with composition api/SFC (single file components). Minimum required vue version is `v3.3`. If you are using Vue 3 composition api, please upgrade to `v3`
+
+Note: v2.x is still compatible with `Vue 3`. Please use latest v1.x (v1.8.0 at the time of writing) if you are using `Vue 2`.
 
 ## Usage:
+
+**pnpm:**
+`pnpm add vue-speedometer` 
 
 **Yarn:**
 `yarn add vue-speedometer` 
