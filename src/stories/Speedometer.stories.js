@@ -278,6 +278,44 @@ export const ConfiguringTheFormatForValuesDisplayed = () => ({
 `,
 })
 
+function segmentValueFormatter(value) {
+  if (value < 200) {
+    return `${value} 😒`
+  }
+  if (value < 400) {
+    return `${value} 😐`
+  }
+  if (value < 600) {
+    return `${value} 😌`
+  }
+  if (value < 800) {
+    return `${value} 😊`
+  }
+  if (value < 900) {
+    return `${value} 😉`
+  }
+
+  return `${value} 😇`
+}
+
+// ref: https://github.com/vuejs/vue/issues/2436
+export const CustomSegmentValueFormatter = () => ({
+  methods: {
+    segmentValueFormatter,
+  },
+
+  template: `
+    <div>
+      <vue-speedometer
+        :value="333"
+        needleColor="steelblue"
+        :segmentValueFormatter="segmentValueFormatter"
+        :paddingHorizontal="34"
+      />
+    </div>
+  `,
+})
+
 export const CustomCurrentValueText = () => ({
   template: `
   <div>
@@ -323,8 +361,9 @@ export const ConfigureNeedleLengthAndFontSizes = () => ({
 `,
 })
 
-export const GradientEffectWithLargeNumberOfSegmentsAndMaxSegmentLabelsConfig = () => ({
-  template: `
+export const GradientEffectWithLargeNumberOfSegmentsAndMaxSegmentLabelsConfig =
+  () => ({
+    template: `
   <div>
     <vue-speedometer
       :needleHeightRatio="0.7"
@@ -335,7 +374,7 @@ export const GradientEffectWithLargeNumberOfSegmentsAndMaxSegmentLabelsConfig = 
     />
   </div>
 `,
-})
+  })
 
 export const NoSegmentLabels = () => ({
   template: `
