@@ -6,6 +6,7 @@
     "name": "palerdot",
     "email": "palerdot@gmail.com"
   },
+  "type": "module",
   "files": [
     "dist"
   ],

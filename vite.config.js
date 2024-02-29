@@ -31,7 +31,7 @@ export default defineConfig({
   build: {
     lib: {
       name: "VueSpeedometer",
-      entry: path.resolve(__dirname, "src/index.js"),
+      entry: path.resolve(__dirname, "src/index.vue"),
       fileName: (format) => `vue-speedometer.${format}.js`,
     },
     rollupOptions: {
