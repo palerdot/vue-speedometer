@@ -10,6 +10,10 @@ import {
   defaultSegmentValueFormatter,
 } from "./core/config"
 import { render, update } from "./core/render"
+import { CustomSegmentLabelPosition, Transition } from "./core/enums"
+
+// export enums
+export { CustomSegmentLabelPosition, Transition }
 
 const props = defineProps(defaultProps)
 
