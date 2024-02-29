@@ -1,5 +1,20 @@
 # Change Log
 
+## v3.0.0-rc0
+
+- `Vue 3 Support - SFC/composition api`: Rewrite with SFC and composition api
+- `segmentLabelFormatter` prop
+- Experimental slim build
+- Core update `v2.2.1`
+
+-------------------------
+
+## v2.0
+
+- Compatible with `vue v3.0` (still uses options api under the hood)
+
+-------------------------
+
 ## 1.8.0
 - **Bugfix**: Always take new value for `value` prop. This fixes the bug when value will not go to `0`. 
 Resolves https://github.com/palerdot/vue-speedometer/issues/22
