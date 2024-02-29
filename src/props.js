@@ -177,19 +177,4 @@ const props = mapValues(prop_types, (value, key) => {
   }
 })
 
-// helper function to get props values from 'this' instance
-export function getProps(instance) {
-  const keys = _keys(prop_types)
-  let PROPS = {}
-  _each(keys, (key) => {
-    PROPS[key] = instance[key]
-  })
-
-  return PROPS
-}
-
-export function getPropKeys() {
-  return _keys(prop_types)
-}
-
 export default props
