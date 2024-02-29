@@ -15,8 +15,12 @@
   "module": "./dist/vue-speedometer.es.js",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/vue-speedometer.es.js",
       "require": "./dist/vue-speedometer.umd.js"
+    },
+    "./slim": {
+      "import": "./dist/slim/index.js"
     }
   },
   "scripts": {
@@ -44,7 +48,7 @@
     "cy:open": "cypress open",
     "build": "npm run build:main && npm run build:slim && npm run copy:types",
     "build:main": "NODE_ENV=production vite build",
-    "build:slim": "echo 'porumai ... slim build coming soon'",
+    "build:slim": "NODE_ENV=production vite build -c slim.config.js",
     "copy:types": "cp ./src/index.d.ts ./dist/",
     "prepublishOnly": "npm run build",
     "preview": "vite preview"
