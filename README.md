@@ -46,17 +46,11 @@ import VueSpeedometer from "vue-speedometer/slim"
 <VueSpeedometer />
 ```
 
-## Ports:
-- React: [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer)
-- Svelte: [svelte-speedometer](https://github.com/palerdot/svelte-speedometer)
 
 ## Examples:
 
 You can view [Live Examples here](https://palerdot.in/vue-speedometer/)
 
-## About
-
-`vue-speedometer` shares its core with [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer). For more info and context, please visit [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer) 
 
 ## Configuration Options:
 
@@ -370,24 +364,23 @@ module.exports = {
 
 ---
 
-#### Feature Updates:
-- `v1.3.0` - `customSegmentLabels` prop to show custom segment labels. [Live Example](https://codesandbox.io/s/zen-platform-7e8eq)
-- `v1.2.0` - `Typescript` support
-- `v1.0.0.beta` Initial release. ref - https://codesandbox.io/s/vue-template-5yuw8
-
 #### Changelog:
 
 [View Changelog](CHANGELOG.md)
 
 ---
 
-#### Contributing:
-PRs are welcome. Please create a issue/bugfix/feature branch and create an issue with your branch details. Probably I will create a similar branch in the upstream repo so that PRs can be raised against that branch instead of `master`.
+## Ports:
+- React: [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer)
+- Svelte: [svelte-speedometer](https://github.com/palerdot/svelte-speedometer)
 
-#### Notes
-- `1.0` versions are compatible with Vue Version `2.x`
-For every subsequent major `vue` upgrade, `vue-speedometer` will be bumped to next major versions. For example `1.x` will be compatible with `Vue 2.0`, `2.x` will be compatible with `Vue 3.0` so on and so forth ...
+---
 
+## About
+
+`vue-speedometer` shares its core with [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer). For more info and context, please visit [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer) 
+
+---
 
 #### License:
 
